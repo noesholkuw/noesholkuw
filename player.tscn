@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://o0h5fywfyfkk"]
+
+[ext_resource type="Texture2D" uid="uid://tyqs8fywiqyb" path="res://sprites/R1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://o886tvkwwhpb" path="res://sprites/R2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ccjlcumyjiry1" path="res://sprites/R3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ddp0rdkrendoe" path="res://sprites/Rd.png" id="4"]
+[ext_resource type="Script" path="res://player.gd" id="5"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"atras",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"lado 1",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 30.6787
+height = 93.2567
+
+[node name="Player" type="Area2D"]
+position = Vector2(288.84, 277.371)
+script = ExtResource("5")
+__meta__ = {
+"_edit_group_": true
+}
+Velocidad = 400
+
+[node name="Sprite_player" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.310333, -1.14122)
+scale = Vector2(2.08517, 3.18542)
+sprite_frames = SubResource("1")
+animation = &"frente"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.03552, 7.98687)
+shape = SubResource("2")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

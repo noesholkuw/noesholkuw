@@ -1,0 +1,22 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1695161514
+BubbleShine.ttf::FontFile::22483701948212771::1629424707::1695161517::1::::<><>::
+default_env.tres::Environment::-1::1695161485::0::1::::<><>::
+HEY LEMON.otf::FontFile::4644198408941716571::1629425282::1695161517::1::::<><>::
+icon.png::CompressedTexture2D::6161752271289681580::1629070872::1695161519::1::::<><>::
+Interfaz.gd::GDScript::-1::1695161485::0::1::::<>CanvasLayer<>::
+Interfaz.tscn::PackedScene::-1::1695161485::0::1::::<><>::res://HEY LEMON.otf<>res://BubbleShine.ttf<>res://Interfaz.gd
+Mundo.gd::GDScript::-1::1695161485::0::1::::<>Node<>::
+Mundo.tscn::PackedScene::-1::1695161485::0::1::::<><>::res://player.tscn<>res://Roca.tscn<>res://Mundo.gd<>res://Interfaz.tscn
+player.gd::GDScript::-1::1695161485::0::1::::<>Area2D<>::
+player.tscn::PackedScene::-1::1695161485::0::1::::<><>::res://sprites/R1.png<>res://sprites/R2.png<>res://sprites/R3.png<>res://sprites/Rd.png<>res://player.gd
+Roca.gd::GDScript::-1::1695161485::0::1::::<>RigidBody2D<>::
+Roca.tscn::PackedScene::-1::1695161485::0::1::::<><>::res://sprites/b2f30283fe843fcccf12118afe2d9a57 (3).png<>res://sprites/b2f30283fe843fcccf12118afe2d9a57 (2).png<>res://Roca.gd
+::res://sprites/::1683345856
+218-2183278_fruits-and-vegetables-sprites-frutas-png-clipart (2).png::CompressedTexture2D::5794381272150644910::1629070944::1695161518::1::::<><>::
+b2f30283fe843fcccf12118afe2d9a57 (2).png::CompressedTexture2D::598687545537334201::1629070944::1695161518::1::::<><>::
+b2f30283fe843fcccf12118afe2d9a57 (3).png::CompressedTexture2D::2136971636765988394::1629070944::1695161518::1::::<><>::
+R1.png::CompressedTexture2D::1384138453509361617::1629070944::1695161518::1::::<><>::
+R2.png::CompressedTexture2D::1052828328057943467::1629070944::1695161519::1::::<><>::
+R3.png::CompressedTexture2D::4932470983064513758::1629070944::1695161519::1::::<><>::
+Rd.png::CompressedTexture2D::7402342705416198836::1629070945::1695161519::1::::<><>::

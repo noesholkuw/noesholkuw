@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0rvelccnvyvk"]
+
+[ext_resource type="PackedScene" uid="uid://o0h5fywfyfkk" path="res://player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Roca.tscn" id="2"]
+[ext_resource type="Script" path="res://Mundo.gd" id="3"]
+[ext_resource type="PackedScene" path="res://Interfaz.tscn" id="4"]
+
+[sub_resource type="Curve2D" id="1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -0.0078125, 0, 0, 0, 0, 0, 640, -0.0078125, 0, 0, 0, 0, 639.992, 959.984, 0, 0, 0, 0, -0.0234375, 959.961, 0, 0, 0, 0, -0.0078125, 0)
+}
+point_count = 5
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource("3")
+Roca = ExtResource("2")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+
+[node name="RocaTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="InicioTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PosicionDeInicio" type="Marker2D" parent="."]
+position = Vector2(320, 480)
+
+[node name="camino" type="Path2D" parent="."]
+curve = SubResource("1")
+
+[node name="RocaPosicion" type="PathFollow2D" parent="camino"]
+position = Vector2(-0.0078125, 0)
+rotation = -1.22069e-05
+
+[node name="Interfaz" parent="." instance=ExtResource("4")]
+
+[connection signal="timeout" from="RocaTimer" to="." method="_on_RocaTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="InicioTimer" to="." method="_on_InicioTimer_timeout"]
+[connection signal="iniciar_juego" from="Interfaz" to="." method="nuevo_juego"]

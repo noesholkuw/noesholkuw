@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/b2f30283fe843fcccf12118afe2d9a57 (3).png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/b2f30283fe843fcccf12118afe2d9a57 (2).png" type="Texture2D" id=2]
+[ext_resource path="res://Roca.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "chiquito",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "grande",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 53.0094
+
+[node name="Roca" type="RigidBody2D"]
+position = Vector2( 320.153, 359.875 )
+collision_layer = 0
+gravity_scale = 0.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+velocidad_min = 150
+velocidad_max = 250
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+animation = "chiquito"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -0.5 )
+shape = SubResource( 2 )
+
+[node name="Visibilidad" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="Visibilidad" to="." method="_on_Visibilidad_screen_exited"]
